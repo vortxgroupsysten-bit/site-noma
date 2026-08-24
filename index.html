@@ -1530,6 +1530,13 @@
                 align-items: flex-start;
                 gap: 0.5rem;
             }
+
+            /* ============================================================
+               ESCONDER APENAS O BOTÃO "VER CARDÁPIO" NO MOBILE
+            ============================================================ */
+            .hero-content .hero-cta-group .btn-primary {
+                display: none !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1564,6 +1571,19 @@
             }
             .nav-logo .logo-text .brand {
                 font-size: 1.1rem;
+            }
+
+            /* ============================================================
+               ESCONDER APENAS O BOTÃO "VER CARDÁPIO" NO MOBILE (TELAS MUITO PEQUENAS)
+            ============================================================ */
+            .hero-content .hero-cta-group .btn-primary {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero-content .hero-cta-group .btn-primary {
+                display: inline-flex !important;
             }
         }
 
@@ -2922,7 +2942,7 @@
 
                 var keys = Object.keys(carrinhoAgrupado);
                 keys.forEach(function(key) {
-                    var grupo = carrinhoAgrupado[key];
+                    var grupo = carrinhoAgrupsado[key];
                     var selecionadosStr = grupo.selecionados && grupo.selecionados.length > 0 ?
                         grupo.selecionados.join(', ') :
                         'Padrão';
